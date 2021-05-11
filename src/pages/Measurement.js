@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import axios from "axios";
 
-
-
 const inputData = {
   bindId: "",
   weightAfterAction: "",
 };
 
 function Measurement() {
-
-
   const [values, setValues] = useState(inputData);
   const [weightDiff, setWeightDiff] = useState();
 
@@ -42,14 +38,12 @@ function Measurement() {
 
   return (
     <NavBar>
-      <div className="bg-gray-200 min-h-screen flex flex-col items-center">
+      <div className=" min-h-screen flex flex-col items-center">
         <div className="w-4/5 h-96 my-20 mx-auto  flex justify-center items-center bg-gray-900">
           <form
             onSubmit={submit}
             className="w-full flex flex-col justify-center items-center"
           >
-            
-
             <label for="machine" className="text-white">
               Enter bind Id
             </label>
@@ -79,7 +73,7 @@ function Measurement() {
           </form>
         </div>
       </div>
-      {weightDiff ? <h2>{weightDiff}</h2> : null}
+      {weightDiff ? <h2>{JSON.stringify(weightDiff)}</h2> : null}
     </NavBar>
   );
 }

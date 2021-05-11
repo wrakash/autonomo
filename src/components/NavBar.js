@@ -131,7 +131,7 @@ function NavBar({ children }) {
         </nav>
       </div>
 
-      <div className="flex-1" ref={wrapperRef}>
+      <div className="flex-1 " ref={wrapperRef}>
         {children}
       </div>
     </div>

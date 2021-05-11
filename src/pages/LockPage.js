@@ -49,7 +49,7 @@ function LockPage() {
 
 
   return (
-    <div className="bg-gray-200 min-h-screen flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center">
       <Header />
       <div className="w-4/5 h-96 my-20 mx-auto  flex justify-center items-center bg-gray-900">
         <form

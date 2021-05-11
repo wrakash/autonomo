@@ -6,6 +6,7 @@ import HeartBeat from "./pages/HeartBeat";
 import UserCart from "./pages/UserCart";
 import Measurement from "./pages/Measurement";
 
+
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/machine/user/cart">
           <ProtectedPage cmp={UserCart} />
         </Route>
+
 
         <Route exact path="/">
           <ProtectedPage cmp={HeartBeat} />
