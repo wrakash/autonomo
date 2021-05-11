@@ -6,14 +6,16 @@ import axios from "axios";
 
 function UserCart(props) {
   const [users, setUsers] = useState([]);
-  useEffect(async () => {
-    const res = await axios.get(process.env.REACT_APP_CARDUSER_URL, {
+
+  useEffect(() => {
+    const res = axios.get(process.env.REACT_APP_CARDUSER_URL, {
       headers: {
         "Content-Type": "application/json",
       },
     });
     setUsers(res.data);
   }, []);
+
   return (
     <NavBar>
       <div className="w-full h-auto p-10 select-none ">
@@ -27,21 +29,26 @@ function UserCart(props) {
             </Tr>
           </Thead>
 
-          {users.map((user, index) => {
-            <Tbody key={index}>
-              <Tr>
-                <Td>{index}</Td>
-                <Td>{user.cardId}</Td>
-                {Object.entries(user.machineSessionCart).forEach((item) => {
-                  return (
-                    <>
-                      <Td>{item.bindId}</Td>
-                      <Td>{item.weight}</Td>
-                    </>
-                  );
-                })}
-              </Tr>
-            </Tbody>;
+          {users?.map((user, index) => {
+            return (
+              <>
+                <Tbody key={index}>
+                  <Tr>
+                    <Td>{index}</Td>
+                    <Td>{user.cardId}</Td>
+                    {Object.entries(user.machineSessionCart).forEach((item) => {
+                      return (
+                        <>
+                          <Td>{item.bindId}</Td>
+                          <Td>{item.weight}</Td>
+                        </>
+                      );
+                    })}
+                  </Tr>
+                </Tbody>
+                ;
+              </>
+            );
           })}
         </Table>
       </div>

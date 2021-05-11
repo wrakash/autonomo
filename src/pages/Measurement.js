@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import axios from "axios";
 
-import { useHistory } from "react-router-dom";
+
 
 const inputData = {
   bindId: "",
@@ -10,7 +10,7 @@ const inputData = {
 };
 
 function Measurement() {
-  const history = useHistory();
+
 
   const [values, setValues] = useState(inputData);
   const [weightDiff, setWeightDiff] = useState();
